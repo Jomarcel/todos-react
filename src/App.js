@@ -1,5 +1,6 @@
-import React from 'react';
 import Todos  from './Todos'
+import React, { Component } from 'react'
+
 
 //root component to store the state of application
 class App extends Component {
@@ -12,7 +13,7 @@ class App extends Component {
   render() { 
     return (  
       <div>
-        
+        <Todos></Todos>
       </div>
     );
   }
