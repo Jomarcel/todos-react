@@ -12,7 +12,7 @@ class App extends Component {
     ]
    }
   
-   deleteToDo = (key) => {
+   deleteToDo = (key, myTodo) => {
     // console.log(key); 
     const filteredTodos = this.state.todos.filter(todo => {
       return todo.key !== key
@@ -20,7 +20,7 @@ class App extends Component {
     this.setState({
       todos: filteredTodos
     },() => {
-      console.log("item removed")
+      console.log("removed item: ", myTodo)
     })
    }
 
@@ -32,7 +32,7 @@ class App extends Component {
     this.setState({
       todos: newToDoList
     },() => {
-      console.log("new todo added", todo)
+      // console.log("new todo added", todo)
     })
    }
   render() { 

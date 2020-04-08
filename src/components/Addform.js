@@ -11,17 +11,19 @@ class Addform extends Component {
      handleSubmit = (e) => {
          e.preventDefault(); // prevent the page from refreshing on submit
         //  console.log(this.state);
-        if(this.state.content === ''){
-            console.log("add sometthing")
-            return null;
-        }else{
+        if(this.state.content.length > 0){
             this.props.addtodo(this.state)  // pass the content data to function addtodo
+            console.log("added item: ", this.state.content)
+            
+        }else{
+            return null;
+            // console.log("add sometthing")
         }
         // e.target.reset();
         this.setState({
             content: ''
         }, () => {
-            console.log("submit called")
+            // console.log("submit called")
         })
      }
     render() { 
