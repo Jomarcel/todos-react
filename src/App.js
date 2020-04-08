@@ -1,4 +1,4 @@
-import Todos  from './Todos'
+import Todos  from './components/Todos'
 import React, { Component } from 'react'
 
 
@@ -6,14 +6,15 @@ import React, { Component } from 'react'
 class App extends Component {
   state = { 
     todos: [
-      {id: 1, content: 'anime'},
-      {id: 1, content: 'watch Kdrama'}
+      {key: 1, content: 'anime'},
+      {key: 1, content: 'watch Kdrama'}
     ]
    }
   render() { 
     return (  
-      <div>
-        <Todos></Todos>
+      <div className = 'todos-app container'>
+        <h1 className="center blue-text">Todos</h1>
+        <Todos todos = {this.state.todos}></Todos>
       </div>
     );
   }
