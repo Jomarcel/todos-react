@@ -6,7 +6,8 @@ const Todos = ({todos, deleteToDo}) => {
       return(
         <div className="collection-item" key = {todo.key}>
           <span >{todo.content}</span>
-          <button className="remove-button right" onClick = {() => deleteToDo(todo.key)}>Remove</button>
+          <button className="remove-button right" onClick = {() => deleteToDo(todo.key, todo.content)}>Remove</button>
+          
         </div>
       )
     })
@@ -16,6 +17,7 @@ const Todos = ({todos, deleteToDo}) => {
   return (
     <div className="todos collection">
       {todolist}
+      
     </div>
 
   )
