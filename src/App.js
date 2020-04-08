@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import Addform from './components/Addform'
 // import background from './background.jpg'
 
-
 //root component to store the state of application
 class App extends Component {
   state = { 
@@ -20,6 +19,8 @@ class App extends Component {
     })
     this.setState({
       todos: filteredTodos
+    },() => {
+      console.log("item removed")
     })
    }
 
@@ -30,15 +31,17 @@ class App extends Component {
     todo.key = Math.random();
     this.setState({
       todos: newToDoList
+    },() => {
+      console.log("new todo added", todo)
     })
    }
   render() { 
     return (  
-      <div className = 'todos-app container'>
+      <div className = 'todos-app container' text= "true">
         <h1 className="center blue-text">Todos</h1>
         <Todos todos = {this.state.todos}  deleteToDo = {this.deleteToDo}></Todos>
         {/* <img src={background} alt="my background"/> */}
-        <Addform addToDo = {this.addToDo}/>
+        <Addform addtodo = {this.addToDo }/>
       </div>
     );
   }
