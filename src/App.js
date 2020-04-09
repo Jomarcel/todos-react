@@ -8,8 +8,9 @@ import shortid from 'shortid'
 class App extends Component {
   state = { 
     todos: [
-      // {key: 1, content: ''},
-      // {key: 2, content: ''}
+      {key: shortid.generate(), text: 'React'},
+      {key: shortid.generate(), text: 'Angular'},
+      {key: shortid.generate(), text: 'Vue'}
     ]
    }
   
@@ -21,7 +22,9 @@ class App extends Component {
     this.setState({
       todos: filteredTodos
     },() => {
+
       console.log("removed item:", myTodo,",", "Key:", key)
+
     })
    }
 
@@ -39,7 +42,7 @@ class App extends Component {
    }
   render() { 
     return (  
-      <div className = 'todos-app container' text= "true">
+      <div className = 'todos-app container' >
         <h1 className="center blue-text">Todos</h1>
         <Todos todos = {this.state.todos}  deleteToDo = {this.deleteToDo}></Todos>
         {/* <img src={background} alt="my background"/> */}

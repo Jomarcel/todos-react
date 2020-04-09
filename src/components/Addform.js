@@ -12,6 +12,7 @@ class Addform extends Component {
      handleSubmit = (e) => {
          e.preventDefault(); // prevent the page from refreshing on submit
         //  console.log(this.state);
+
         if(this.state.text.length > 0 ){
             this.props.addtodo(this.state)  // pass the text data to function addtodo
             console.log("added item: ", this.state.text)
@@ -19,6 +20,7 @@ class Addform extends Component {
         else{
             return null
         }
+
         // e.target.reset();
         this.setState({
             text: '', // clear text after submit

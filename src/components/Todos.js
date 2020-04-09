@@ -7,8 +7,7 @@ const Todos = ({todos, deleteToDo}) => {
       return(
         <div className="collection-item" key = {todo.key}>
           <span >{todo.text}</span>
-          <button className="remove-button right" onClick = {() => deleteToDo(todo.key,todo.text)}>Remove</button>
-          
+          <button className="remove-button right" onClick = {() => deleteToDo(todo.key,todo.text)}>Remove</button>          
         </div>
       )
     })
@@ -18,7 +17,6 @@ const Todos = ({todos, deleteToDo}) => {
   return (
     <div className="todos collection">
       {todolist}
-      
     </div>
 
   )
