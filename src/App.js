@@ -1,14 +1,15 @@
 import Todos  from './components/Todos'
 import React, { Component } from 'react'
 import Addform from './components/Addform'
+import shortid from 'shortid'
 // import background from './background.jpg'
 
 //root component to store the state of application
 class App extends Component {
   state = { 
     todos: [
-      {key: 1, content: 'anime'},
-      {key: 2, content: 'watch Kdrama'}
+      // {key: 1, content: ''},
+      // {key: 2, content: ''}
     ]
    }
   
@@ -20,7 +21,7 @@ class App extends Component {
     this.setState({
       todos: filteredTodos
     },() => {
-      console.log("removed item: ", myTodo)
+      console.log("removed item:", myTodo,",", "Key:", key)
     })
    }
 
@@ -28,7 +29,8 @@ class App extends Component {
     // use the ... operator to get each item in the array. The todo paramenter accepts user input from the textfield
     // which is passed in from the addform component
     let newToDoList = [...this.state.todos, todo]
-    todo.key = Math.random();
+    // todo.key = Math.random();
+    todo.key = shortid.generate();
     this.setState({
       todos: newToDoList
     },() => {
